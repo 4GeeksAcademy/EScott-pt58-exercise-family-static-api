@@ -19,11 +19,16 @@ class FamilyStructure:
     def _generateId(self):
         return randint(0, 99999999)
 
-    def add_member(self, member):
+    def add_member(self, member: dict):
+        if "id" not in member.keys():
+            member["id"] = self._generateId()
+        member["last_name"] = self.last_name
+        self._members.append(member)
         # fill this method and update the return
         pass
 
     def delete_member(self, id):
+        self.members.remove = id
         # fill this method and update the return
         pass
 
